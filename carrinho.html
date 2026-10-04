@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+  <title>Carrinho — VOTIX</title>
+
+  <!-- Fonte Montserrat (Google Fonts) -->
+  <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+
+  <!-- Estilos desta página (os arquivos ficam em assets/css/) -->
+  <link rel="stylesheet" href="assets/css/base.css">
+  <link rel="stylesheet" href="assets/css/carrinho.css">
+</head>
+
+<body>
+
+  <!-- O cabeçalho (logo, busca e menu) é inserido aqui pelo assets/js/core.js -->
+  <div id="topo"></div>
+
+  <!-- Conteúdo principal. Os itens, o resumo e as mensagens são preenchidos pelo carrinho.js -->
+  <main id="m">
+
+    <h1 id="h">Carrinho</h1>
+
+    <div class="cl" id="cl">
+
+      <!-- ===== COLUNA ESQUERDA: lista dos itens (preenchida pelo carrinho.js) ===== -->
+      <div class="card" id="lista"></div>
+
+      <!-- ===== COLUNA DIREITA: resumo do pedido ===== -->
+      <aside class="res">
+        <h2>Resumo do pedido</h2>
+
+        <!-- CEP + botão Calcular (frete) -->
+        <div class="fld">
+          <input id="cep" inputmode="numeric" placeholder="Seu CEP" aria-label="CEP">
+          <button id="bcep" type="button">Calcular</button>
+        </div>
+
+        <!-- Cupom + botão Aplicar (cupons válidos: veja o começo do carrinho.js) -->
+        <div class="fld">
+          <input id="cup" placeholder="Cupom de desconto" aria-label="Cupom">
+          <button id="bcup" type="button">Aplicar</button>
+        </div>
+
+        <!-- Mensagem de retorno (CEP calculado, cupom aplicado/inválido...) -->
+        <div class="msg" id="msg"></div>
+
+        <!-- Linhas do resumo (os valores são preenchidos pela função sum() do carrinho.js) -->
+        <div class="ln"><span>Produtos</span><span id="vSub"></span></div>
+        <div class="ln ok" id="rDesc" hidden><span>Desconto</span><span id="vDesc"></span></div>
+        <div class="ln"><span>Frete</span><span id="vFr"></span></div>
+        <div class="ln tot"><span>Total</span><span id="vTot"></span></div>
+        <div class="pix" id="vPix"></div>
+
+        <button class="go" id="fin">Finalizar compra</button>
+        <a class="lk" href="promocoes.html">Continuar comprando</a>
+      </aside>
+
+    </div>
+  </main>
+
+  <!-- Rodapé -->
+  <footer>VOTIX — loja de demonstração.</footer>
+
+  <!-- ===== SCRIPTS (a ordem importa) ===== -->
+  <!-- 1º: núcleo do site (carrinho + cabeçalho) -->
+  <script src="assets/js/core.js"></script>
+  <!-- 2º: lógica da página do carrinho -->
+  <script src="assets/js/carrinho.js"></script>
+</body>
+</html>

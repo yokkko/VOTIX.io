@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+  <title>Mundo Gamer — VOTIX</title>
+
+  <!-- Fonte Montserrat (Google Fonts) -->
+  <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+
+  <!-- Estilos desta página (os arquivos ficam em assets/css/) -->
+  <link rel="stylesheet" href="assets/css/base.css">
+</head>
+
+<!-- data-cat diz ao categoria.js QUAL categoria mostrar ("mundo-gamer").
+     A lista de produtos, os filtros e a paginação são criados pelo JavaScript. -->
+<body data-cat="mundo-gamer">
+
+  <!-- O cabeçalho (logo, busca e menu) é inserido aqui pelo core.js -->
+  <div id="topo"></div>
+
+  <!-- Todo o conteúdo da categoria é inserido aqui pelo categoria.js -->
+  <main id="app"></main>
+
+  <!-- Scripts (a ordem importa): 1º núcleo do site (carrinho + cabeçalho) | 2º montagem da categoria -->
+  <script src="assets/js/core.js"></script>
+  <script src="assets/js/categoria.js"></script>
+</body>
+</html>

@@ -1,0 +1,136 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+  <title>VOTIX — eletrônicos e informática</title>
+
+  <!-- Fonte Montserrat (Google Fonts) -->
+  <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+
+  <!-- Estilos desta página (os arquivos ficam em assets/css/) -->
+  <link rel="stylesheet" href="assets/css/index.css">
+</head>
+
+<body>
+
+  <!-- O cabeçalho (logo, busca e menu) é inserido aqui pelo assets/js/core.js -->
+  <div id="topo"></div>
+
+
+  <!-- ============================================================
+       1. BANNERS (carrossel de propagandas)
+       Para colocar uma imagem num banner, troque o conteúdo de cada .slide por:
+       <img src="banner.jpg" alt="descrição do banner">
+       Para mudar para onde o banner leva, troque o href.
+       ============================================================ -->
+  <section class="hero" aria-label="Destaques">
+
+    <!-- Setas ‹ › (a função sl() está em assets/js/index.js) -->
+    <button class="arr l" aria-label="Anterior" onclick="sl(-1)">‹</button>
+    <button class="arr r" aria-label="Próximo" onclick="sl(1)">›</button>
+
+    <!-- Os banners (cada <a class="slide"> é um) -->
+    <div class="car" id="car">
+      <a class="slide" href="promocoes.html"><!-- <img src="banner1.jpg" alt=""> --></a>
+      <a class="slide" href="mundo-gamer.html"><!-- <img src="banner2.jpg" alt=""> --></a>
+      <a class="slide" href="monitores.html"><!-- <img src="banner3.jpg" alt=""> --></a>
+    </div>
+  </section>
+
+
+  <!-- ============================================================
+       2. CARTÕES DE ATALHO
+       Cada <div class="img"> / <a class="img"> é um espaço de imagem: para usar uma foto,
+       coloque <img src="..." alt=""> dentro dele.
+       ============================================================ -->
+  <section class="cards" aria-label="Atalhos">
+
+    <!-- Cartão 1: "Visto recentemente" (1 produto) -->
+    <div class="cd">
+      <h3>Visto recentemente</h3>
+      <a class="rv" href="perifericos.html">
+        <div class="img"></div>
+        <p>Mouse Gamer G203 RGB, 6 botões</p>
+      </a>
+    </div>
+
+    <!-- Cartão 2: Placas-mãe (4 imagens; todas levam à categoria de hardware) -->
+    <div class="cd">
+      <h3>Placas-mãe <a href="placas-de-video.html">›</a></h3>
+      <div class="g4">
+        <a class="img" href="placas-de-video.html"></a>
+        <a class="img" href="placas-de-video.html"></a>
+        <a class="img" href="placas-de-video.html"></a>
+        <a class="img" href="placas-de-video.html"></a>
+      </div>
+    </div>
+
+    <!-- Cartão 3: Monitores -->
+    <div class="cd">
+      <h3>Monitores <a href="monitores.html">›</a></h3>
+      <div class="g4">
+        <a class="img" href="monitores.html"></a>
+        <a class="img" href="monitores.html"></a>
+        <a class="img" href="monitores.html"></a>
+        <a class="img" href="monitores.html"></a>
+      </div>
+    </div>
+
+    <!-- Cartão 4: Mundo gamer -->
+    <div class="cd">
+      <h3>Mundo gamer <a href="mundo-gamer.html">›</a></h3>
+      <div class="g4">
+        <a class="img" href="mundo-gamer.html"></a>
+        <a class="img" href="mundo-gamer.html"></a>
+        <a class="img" href="mundo-gamer.html"></a>
+        <a class="img" href="mundo-gamer.html"></a>
+      </div>
+    </div>
+
+    <!-- Cartão 5: "Recomendados para você" (nome + preço de cada produto) -->
+    <div class="cd">
+      <h3>Recomendados para você</h3>
+      <a class="rec" href="promocoes.html">
+        <div class="img"></div>
+        <div><small>Fonte 650W 80 Plus</small><b>R$ 349,99</b></div>
+      </a>
+      <a class="rec" href="promocoes.html">
+        <div class="img"></div>
+        <div><small>Placa de vídeo RX 7600</small><b>R$ 1.899,99</b></div>
+      </a>
+    </div>
+
+  </section>
+
+
+  <!-- ============================================================
+       3. CATEGORIAS (bolinhas)
+       Cada bolinha é um <div class="img">: para usar um ícone, coloque <img src="..." alt=""> dentro.
+       A primeira (Cupons) tem a classe "o", que a deixa laranja.
+       ============================================================ -->
+  <nav class="cats" aria-label="Categorias">
+    <a class="cat o" href="promocoes.html"><div class="img"></div>Cupons</a>
+    <a class="cat" href="mundo-gamer.html"><div class="img"></div>Mundo Gamer</a>
+    <a class="cat" href="placas-de-video.html"><div class="img"></div>Placas-mãe</a>
+    <a class="cat" href="promocoes.html"><div class="img"></div>Memória RAM</a>
+    <a class="cat" href="promocoes.html"><div class="img"></div>SSD</a>
+    <a class="cat" href="placas-de-video.html"><div class="img"></div>Placas de Vídeo</a>
+    <a class="cat" href="notebooks.html"><div class="img"></div>Notebooks</a>
+    <a class="cat" href="mundo-gamer.html"><div class="img"></div>Games</a>
+    <a class="cat" href="promocoes.html"><div class="img"></div>Celulares</a>
+    <a class="cat" href="monitores.html"><div class="img"></div>Monitores</a>
+  </nav>
+
+
+  <!-- Rodapé -->
+  <footer>VOTIX — loja de demonstração.</footer>
+
+
+  <!-- ===== SCRIPTS (a ordem importa) ===== -->
+  <!-- 1º: núcleo do site (carrinho + cabeçalho) -->
+  <script src="assets/js/core.js"></script>
+  <!-- 2º: setas do carrossel -->
+  <script src="assets/js/index.js"></script>
+</body>
+</html>

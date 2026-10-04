@@ -1,0 +1,116 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+  <title>Criar conta — VOTIX</title>
+
+  <!-- Fonte Montserrat (Google Fonts) -->
+  <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+
+  <!-- Estilos desta página (os arquivos ficam em assets/css/) -->
+  <link rel="stylesheet" href="assets/css/base.css">
+  <link rel="stylesheet" href="assets/css/cadastro.css">
+</head>
+
+<body>
+
+  <!-- O cabeçalho (logo, busca e menu) é inserido aqui pelo assets/js/core.js -->
+  <div id="topo"></div>
+
+  <main>
+    <div class="box" id="box">
+
+      <h1>Criar conta</h1>
+      <p>Preencha seus dados para comprar mais rápido.</p>
+
+      <!-- Abas: Pessoa física / Pessoa jurídica (o cadastro.js troca os rótulos e a validação) -->
+      <div class="tabs" role="tablist">
+        <button type="button" role="tab" aria-selected="true" data-t="pf">Pessoa física</button>
+        <button type="button" role="tab" aria-selected="false" data-t="pj">Pessoa jurídica</button>
+      </div>
+
+      <!-- Formulário. Cada campo ("f") tem: rótulo + caixa + <span class="err"> onde aparece a mensagem de erro.
+           O id de cada caixa é o mesmo nome da regra de validação no cadastro.js. -->
+      <form id="fm" novalidate>
+
+        <!-- Nome completo (ou Razão social) -->
+        <div class="f">
+          <label for="nome" id="lNome">Nome completo</label>
+          <input id="nome" autocomplete="name">
+          <span class="err" role="alert"></span>
+        </div>
+
+        <!-- CPF (ou CNPJ) + Data de nascimento (ou de abertura), lado a lado -->
+        <div class="g2">
+          <div class="f">
+            <label for="doc" id="lDoc">CPF</label>
+            <input id="doc" inputmode="numeric" placeholder="000.000.000-00">
+            <span class="err" role="alert"></span>
+          </div>
+          <div class="f">
+            <label for="nasc" id="lNasc">Data de nascimento</label>
+            <input id="nasc" type="date">
+            <span class="err" role="alert"></span>
+          </div>
+        </div>
+
+        <!-- E-mail + Celular, lado a lado -->
+        <div class="g2">
+          <div class="f">
+            <label for="email">E-mail</label>
+            <input id="email" type="email" autocomplete="email" placeholder="voce@email.com">
+            <span class="err" role="alert"></span>
+          </div>
+          <div class="f">
+            <label for="cel">Celular</label>
+            <input id="cel" inputmode="tel" autocomplete="tel" placeholder="(11) 91234-5678">
+            <span class="err" role="alert"></span>
+          </div>
+        </div>
+
+        <!-- Senha (com botão Mostrar/Ocultar) -->
+        <div class="f">
+          <label for="senha">Senha</label>
+          <input id="senha" type="password" autocomplete="new-password">
+          <button type="button" class="eye" id="eye">Mostrar</button>
+          <div class="hint">Mínimo de 8 caracteres, com letras e números.</div>
+          <span class="err" role="alert"></span>
+        </div>
+
+        <!-- Confirmar senha -->
+        <div class="f">
+          <label for="conf">Confirmar senha</label>
+          <input id="conf" type="password" autocomplete="new-password">
+          <span class="err" role="alert"></span>
+        </div>
+
+        <!-- Aceite dos termos (obrigatório) -->
+        <label class="ck">
+          <input type="checkbox" id="termos">
+          <span>Li e aceito os <a href="#">Termos de uso</a> e a <a href="#">Política de privacidade</a>.</span>
+        </label>
+        <span class="err" id="eTermos" role="alert"></span>
+
+        <!-- Receber ofertas por e-mail (opcional) -->
+        <label class="ck">
+          <input type="checkbox" id="news">
+          <span>Quero receber ofertas e novidades por e-mail.</span>
+        </label>
+
+        <button class="go">Criar conta</button>
+      </form>
+
+    </div>
+  </main>
+
+  <!-- Rodapé -->
+  <footer>VOTIX — loja de demonstração.</footer>
+
+  <!-- ===== SCRIPTS (a ordem importa) ===== -->
+  <!-- 1º: núcleo do site (carrinho + cabeçalho) -->
+  <script src="assets/js/core.js"></script>
+  <!-- 2º: máscaras, validação e envio do formulário -->
+  <script src="assets/js/cadastro.js"></script>
+</body>
+</html>
