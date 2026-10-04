@@ -1,0 +1,424 @@
+/* ============================================================
+   VOTIX — produto.css
+   Estilos EXCLUSIVOS da página de produto
+   (carrega depois de base.css, que fornece o resto).
+   ============================================================ */
+
+/* ============================================================
+   1. ESTRUTURA DA PÁGINA DE PRODUTO
+   ============================================================ */
+
+/* Caixa central que envolve a página inteira do produto. */
+.pw {
+  max-width: 1620px;
+  margin: 0 auto;
+  padding: 0 12px 60px;
+}
+
+/* Trilha de navegação: Início / Categoria / Produto. */
+.bc2 {
+  padding: 22px 4px 16px;
+  font-size: 14px;
+  color: var(--mut);
+}
+
+/* Links da trilha ficam sublinhados. */
+.bc2 a {
+  text-decoration: underline;
+}
+
+/* Último item (código do produto) em cor escura. */
+.bc2 b {
+  color: var(--tx);
+}
+
+/* Layout em 2 colunas: informações do produto (esquerda) e caixa de compra (440px à direita). */
+.pp {
+  display: grid;
+  grid-template-columns: 1fr 440px;
+  gap: 16px;
+  align-items: start;
+}
+
+/* ============================================================
+   2. COLUNA ESQUERDA: FOTOS E DESCRIÇÃO
+   ============================================================ */
+
+/* Cartão branco grande com 3 colunas: miniaturas (90px) | foto grande | informações. */
+.pl {
+  background: #fff;
+  border-radius: 16px;
+  padding: 24px 28px 32px;
+  display: grid;
+  grid-template-columns: 90px 1fr 1fr;
+  gap: 28px;
+  min-height: 680px;
+  position: relative;
+}
+
+/* "Thumb": miniatura da foto (quadradinho com borda azul). */
+.th {
+  width: 90px;
+  height: 90px;
+  border: 1px solid var(--blue);
+  border-radius: 6px;
+  background: var(--ph);
+}
+
+/* Espaço da foto grande do produto. */
+.big {
+  background: var(--ph);
+  border-radius: 10px;
+  min-height: 500px;
+  align-self: center;
+}
+
+/* Ícones de compartilhar e favoritar, no canto superior direito do cartão. */
+.ic {
+  position: absolute;
+  right: 24px;
+  top: 20px;
+  display: flex;
+  gap: 16px;
+}
+.ic button {
+  background: none;
+  border: 0;
+  cursor: pointer;
+  color: #333;
+  padding: 0;
+}
+.ic svg {
+  width: 20px;
+  height: 20px;
+  fill: none;
+  stroke: currentColor;
+  stroke-width: 2;
+  stroke-linecap: round;
+  stroke-linejoin: round;
+}
+
+/* Coração favoritado: laranja e preenchido. */
+.ic .on {
+  color: var(--org);
+}
+.ic .on svg {
+  fill: var(--org);
+}
+
+/* Coluna de textos: nome, vendedor, "sobre o produto". */
+.info {
+  padding-top: 44px;
+}
+
+/* Nome do produto. */
+.info h1 {
+  font-size: 21px;
+  font-weight: 500;
+  line-height: 1.35;
+  margin: 0 0 18px;
+}
+
+/* Linha "Vendido e entregue por: ...". */
+.sell {
+  margin-bottom: 22px;
+}
+.sell a {
+  color: var(--org);
+  font-weight: 700;
+  text-decoration: underline;
+}
+
+/* "SOBRE O PRODUTO": título e lista de destaques. */
+.sob h2 {
+  font-size: 14px;
+  font-weight: 600;
+  margin: 0 0 10px;
+}
+.sob ul {
+  margin: 0 0 12px;
+  padding-left: 16px;
+  line-height: 1.65;
+}
+
+/* Botões que parecem links azuis ("Ver descrição", "Ver informações técnicas", "Inserir CEP"...). */
+.lk2 {
+  color: var(--blue);
+  font-weight: 600;
+  text-decoration: underline;
+  font-size: 13px;
+  margin-right: 12px;
+  cursor: pointer;
+  background: none;
+  border: 0;
+  padding: 0;
+}
+
+/* "Painel" de descrição/ficha técnica: começa escondido (display:none)... */
+.pn {
+  display: none;
+  margin-top: 14px;
+  font-size: 13px;
+  color: #445;
+  line-height: 1.6;
+}
+
+/* ...e aparece quando recebe a classe "on" (o JavaScript faz isso ao clicar no botão). */
+.pn.on {
+  display: block;
+}
+
+/* Tabela da ficha técnica. */
+.pn table {
+  width: 100%;
+  border-collapse: collapse;
+}
+.pn td {
+  padding: 7px 0;
+  border-bottom: 1px solid var(--line);
+}
+.pn td:first-child {
+  color: var(--mut);
+  width: 40%;
+}
+
+/* ============================================================
+   3. COLUNA DIREITA: COMPRA E VENDEDOR
+   ============================================================ */
+
+/* Os dois cartões brancos da direita: caixa de compra (.buy) e vendedor (.vd). */
+.buy,
+.vd {
+  background: #fff;
+  border-radius: 16px;
+  padding: 22px;
+}
+.vd {
+  margin-top: 16px;
+}
+
+/* Preço grande da caixa de compra... */
+.buy .p {
+  font-size: 28px;
+  font-weight: 700;
+}
+
+/* ...e o textinho "à vista no PIX" ao lado. */
+.buy .p small {
+  font-size: 12px;
+  font-weight: 400;
+  color: #555;
+  margin-left: 4px;
+}
+
+/* Preço antigo riscado. */
+.buy .old {
+  font-size: 13px;
+  color: var(--mut);
+  text-decoration: line-through;
+}
+
+/* Linha do parcelamento ("10x R$ ... s/ juros"). */
+.buy .par {
+  font-size: 13px;
+  margin: 8px 0 6px;
+}
+
+/* Linha "Onde deseja receber seu pedido?" + botão Inserir CEP. */
+.buy .cep {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  border-top: 1px solid var(--line);
+  margin-top: 16px;
+  padding-top: 16px;
+  font-size: 13px;
+  gap: 10px;
+}
+
+/* Formulário do CEP: escondido até clicar em "Inserir CEP"... */
+.buy .cf {
+  display: none;
+  gap: 8px;
+  margin-top: 10px;
+}
+
+/* ...quando ganha a classe "on", aparece. */
+.buy .cf.on {
+  display: flex;
+}
+
+/* Campo para digitar o CEP. */
+.buy .cf input {
+  flex: 1;
+  min-width: 0;
+  height: 40px;
+  border: 1px solid #c9cfd8;
+  border-radius: 6px;
+  padding: 0 12px;
+}
+
+/* Botão "Calcular" do CEP. */
+.buy .cf button {
+  border: 1px solid var(--blue);
+  background: #fff;
+  color: var(--blue);
+  font-weight: 700;
+  border-radius: 6px;
+  padding: 0 14px;
+  cursor: pointer;
+}
+
+/* Resultado do frete (texto verde). */
+#fr {
+  font-size: 13px;
+  margin-top: 8px;
+  color: #19a35a;
+}
+
+/* "Big Button": base dos botões grandes "Comprar agora" e "Adicionar ao carrinho". */
+.bb {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 8px;
+  width: 100%;
+  height: 44px;
+  border: 0;
+  border-radius: 6px;
+  font-weight: 700;
+  font-size: 15px;
+  cursor: pointer;
+  margin-top: 14px;
+}
+
+/* Ícone do carrinho dentro do botão. */
+.bb svg {
+  width: 18px;
+  height: 18px;
+  fill: none;
+  stroke: currentColor;
+  stroke-width: 2;
+  stroke-linecap: round;
+  stroke-linejoin: round;
+}
+
+/* Botão 1 (Comprar agora): azul sólido. */
+.b1 {
+  background: var(--blue);
+  color: #fff;
+}
+
+/* Botão 2 (Adicionar ao carrinho): azul claro. */
+.b2 {
+  background: #eaf1fb;
+  color: var(--blue);
+}
+
+/* Cartão do vendedor: nome e nota... */
+.vd h3 {
+  margin: 0;
+  font-size: 15px;
+  font-weight: 600;
+}
+.vd .nt {
+  float: right;
+  font-size: 13px;
+  color: var(--mut);
+}
+
+/* ...com estrelinha laranja antes da nota. */
+.vd .nt::before {
+  content: "★ ";
+  color: var(--org);
+}
+
+/* Barra verde com 5 bolinhas (medidor de reputação do vendedor). */
+.dots {
+  height: 5px;
+  background: #0a8a3a;
+  border-radius: 99px;
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
+  margin: 30px 0 8px;
+}
+.dots i {
+  width: 9px;
+  height: 9px;
+  border-radius: 50%;
+  background: #fff;
+  border: 2px solid #0a8a3a;
+}
+
+/* Legenda "Ruim ... Ótimo" sob a barra. */
+.sc {
+  display: flex;
+  justify-content: space-between;
+  font-size: 12px;
+  color: var(--mut);
+}
+
+/* 3 colunas de estatísticas: Entrega | Atendimento | Produtos vendidos. */
+.st3 {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  text-align: center;
+  margin: 16px 0;
+  font-size: 12px;
+  color: var(--mut);
+}
+.st3 b {
+  display: block;
+  font-size: 14px;
+  color: var(--tx);
+}
+
+/* ============================================================
+   4. EXTRAS
+   ============================================================ */
+
+/* Faixa preta reservada para um banner de propaganda (hoje vazia). */
+.bn {
+  background: #0d0d10;
+  border-radius: 16px;
+  height: 58px;
+  margin-top: 16px;
+}
+
+/* Seção "Você também pode gostar" (usa os mesmos cartões .pc da categoria). */
+.rel {
+  margin-top: 32px;
+}
+.rel h2 {
+  font-size: 20px;
+  margin: 0 0 14px;
+}
+.rel .pc {
+  padding-top: 18px;
+}
+
+/* ============================================================
+   5. TELAS PEQUENAS
+   ============================================================ */
+
+/* Até 1150px de largura: tudo vira uma coluna só e as miniaturas somem. */
+@media (max-width: 1150px) {
+  .pp {
+    grid-template-columns: 1fr;
+  }
+  .pl {
+    grid-template-columns: 1fr;
+    min-height: 0;
+    padding: 20px;
+  }
+  .th {
+    display: none;
+  }
+  .big {
+    min-height: 300px;
+  }
+  .info {
+    padding-top: 10px;
+  }
+}

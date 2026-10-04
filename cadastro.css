@@ -1,0 +1,232 @@
+/* ============================================================
+   VOTIX — cadastro.css
+   Estilos EXCLUSIVOS da página de cadastro
+   (carrega depois de base.css).
+   ============================================================ */
+
+/* ============================================================
+   1. ESTRUTURA DA PÁGINA DE CADASTRO
+   ============================================================ */
+
+/* Espaçamento em volta do formulário. */
+main {
+  padding: 40px 16px 70px;
+}
+
+/* Caixa branca central do formulário (largura máxima 560px). */
+.box {
+  max-width: 560px;
+  margin: 0 auto;
+  background: #fff;
+  border-radius: 12px;
+  padding: 32px 36px 36px;
+}
+
+/* Título "Criar conta". */
+.box h1 {
+  margin: 0 0 4px;
+  font-size: 24px;
+  font-weight: 700;
+}
+
+/* Frase explicativa abaixo do título. */
+.box>p {
+  margin: 0 0 24px;
+  color: var(--mut);
+}
+
+/* ============================================================
+   2. ABAS PESSOA FÍSICA / JURÍDICA
+   ============================================================ */
+
+/* Duas abas lado a lado, num fundo cinza. */
+.tabs {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  background: var(--bg);
+  border-radius: 8px;
+  padding: 4px;
+  margin-bottom: 24px;
+}
+
+/* Cada aba (desmarcada). */
+.tabs button {
+  border: 0;
+  background: none;
+  padding: 10px;
+  border-radius: 6px;
+  font-weight: 600;
+  cursor: pointer;
+  color: var(--mut);
+}
+
+/* Aba escolhida: fundo branco, texto laranja e leve sombra. */
+.tabs button[aria-selected=true] {
+  background: #fff;
+  color: var(--org);
+  box-shadow: 0 1px 3px #0002;
+}
+
+/* ============================================================
+   3. CAMPOS DO FORMULÁRIO
+   ============================================================ */
+
+/* "Grid 2": coloca dois campos lado a lado (ex.: CPF e Data de nascimento). */
+.g2 {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 0 16px;
+}
+
+/* "Field": um campo completo = rótulo + caixa + mensagem de erro. */
+.f {
+  margin-bottom: 16px;
+  position: relative;
+}
+
+/* Rótulo acima da caixa ("Nome completo", "E-mail"...). */
+.f label {
+  display: block;
+  font-size: 13px;
+  font-weight: 600;
+  margin-bottom: 6px;
+}
+
+/* Caixa de digitar. */
+.f input {
+  width: 100%;
+  height: 46px;
+  border: 1px solid #c9cfd8;
+  border-radius: 6px;
+  padding: 0 14px;
+  background: #fff;
+  color: var(--tx);
+}
+
+/* Campo ativo: borda laranja e um brilho suave em volta. */
+.f input:focus {
+  border-color: var(--org);
+  outline: 0;
+  box-shadow: 0 0 0 3px #ff650026;
+}
+
+/* Campo com erro: borda vermelha (o JavaScript marca aria-invalid=true). */
+.f input[aria-invalid=true] {
+  border-color: #d93025;
+}
+
+/* Mensagem de erro vermelha embaixo do campo. */
+.err {
+  display: block;
+  color: #d93025;
+  font-size: 12px;
+  margin-top: 4px;
+  min-height: 0;
+}
+
+/* Botão "Mostrar/Ocultar" dentro do campo de senha, posicionado no canto direito. */
+.eye {
+  position: absolute;
+  right: 10px;
+  top: 31px;
+  border: 0;
+  background: none;
+  color: var(--blue);
+  font-weight: 600;
+  font-size: 12px;
+  cursor: pointer;
+}
+
+/* Dica em cinza ("Mínimo de 8 caracteres..."). */
+.hint {
+  font-size: 12px;
+  color: var(--mut);
+  margin-top: 4px;
+}
+
+/* Linhas com checkbox (aceitar os termos, receber ofertas). */
+.ck {
+  display: flex;
+  gap: 10px;
+  align-items: flex-start;
+  margin: 6px 0 10px;
+  font-size: 13px;
+  color: #445;
+}
+.ck input {
+  width: 18px;
+  height: 18px;
+  accent-color: var(--org);
+  margin: 1px 0 0;
+  flex: none;
+}
+
+/* Links azuis sublinhados dentro dessas linhas. */
+.ck a,
+.login a {
+  color: var(--blue);
+  font-weight: 600;
+  text-decoration: underline;
+}
+
+/* ============================================================
+   4. BOTÃO E MENSAGEM FINAL
+   ============================================================ */
+
+/* Botão grande laranja "Criar conta". */
+.go {
+  width: 100%;
+  height: 50px;
+  border: 0;
+  border-radius: 6px;
+  background: var(--org);
+  color: #fff;
+  font-weight: 700;
+  font-size: 16px;
+  cursor: pointer;
+  margin-top: 12px;
+}
+
+/* Fica um laranja mais escuro ao passar o mouse. */
+.go:hover {
+  background: #e85b00;
+}
+
+/* Texto centralizado abaixo do botão. */
+.login {
+  text-align: center;
+  margin: 20px 0 0;
+  color: var(--mut);
+}
+
+/* Tela de sucesso ("Conta criada") que substitui o formulário. */
+.ok {
+  text-align: center;
+  padding: 30px 0;
+}
+.ok h1 {
+  color: #19a35a;
+}
+.ok a {
+  display: inline-block;
+  margin-top: 18px;
+  background: var(--org);
+  color: #fff;
+  font-weight: 700;
+  padding: 13px 28px;
+  border-radius: 6px;
+}
+
+/* ============================================================
+   5. CELULAR
+   ============================================================ */
+
+/* Até 600px: menos espaçamento e os campos lado a lado passam a ficar um embaixo do outro. */
+@media (max-width: 600px) {
+  .box {
+    padding: 24px 18px;
+  }
+  .g2 {
+    grid-template-columns: 1fr;
+  }
+}

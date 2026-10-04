@@ -1,0 +1,375 @@
+/* ============================================================
+   VOTIX — index.css
+   Estilos da PÁGINA INICIAL. Este arquivo é independente:
+   não usa base.css.
+   ============================================================ */
+
+/* ============================================================
+   1. VARIÁVEIS E CONFIGURAÇÃO GERAL
+   ============================================================ */
+
+/* Cores do site (a página inicial tem seu próprio conjunto, menor que o das outras páginas). */
+:root {
+  --blue: #404142;  /* azul principal (cabeçalho, links, botões azuis) */
+  --blue2: #454546;  /* azul mais escuro (rodapé) */
+  --org: #fd564a;  /* laranja da marca (botões, destaques, preços em oferta) */
+  --bg: #f0f2f5;  /* cinza claro do fundo da página */
+  --tx: #2b3442;  /* cor padrão dos textos */
+  --ph: #e4e8ee;  /* cinza dos espaços de imagem (placeholder) */
+}
+
+/* width/height já contam borda e espaçamento interno. */
+* {
+  box-sizing: border-box;
+}
+
+/* Página inteira: sem margem, fundo cinza claro, fonte Montserrat. */
+body {
+  margin: 0;
+  background: var(--bg);
+  color: var(--tx);
+  font: 14px/1.4 Montserrat, Arial, sans-serif;
+  padding-bottom: env(safe-area-inset-bottom, 0px);
+}
+
+/* Links sem sublinhado, com a cor do texto em volta. */
+a {
+  color: inherit;
+  text-decoration: none;
+}
+input {
+  font: inherit;
+}
+
+/* Contorno laranja ao navegar pelo teclado (Tab). */
+:focus-visible {
+  outline: 2px solid var(--org);
+  outline-offset: 2px;
+}
+
+/* Imagens: sem espaço extra embaixo e preenchendo a caixa onde estiverem (object-fit: cover). */
+img {
+  display: block;
+  max-width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+/* ============================================================
+   2. CABEÇALHO
+   ============================================================ */
+
+/* Barra azul do topo (mesmo visual de base.css; o conteúdo é criado por assets/js/core.js). */
+header {
+  background: var(--blue);
+  color: #fff;
+  padding: 14px 24px;
+  padding-top: calc(14px + env(safe-area-inset-top, 0px));
+}
+.top {
+  display: flex;
+  align-items: center;
+  gap: 24px;
+}
+.logo {
+  font-size: 28px;
+  font-weight: 800;
+  font-style: italic;
+  letter-spacing: -1px;
+}
+.logo i {
+  color: var(--org);
+}
+.search {
+  flex: 1;
+  min-width: 0;
+}
+.search input {
+  width: 100%;
+  height: 40px;
+  border: 0;
+  border-radius: 4px;
+  padding: 0 16px;
+  font-size: 15px;
+}
+.acts {
+  display: flex;
+  gap: 24px;
+  font-size: 13px;
+  font-weight: 600;
+  white-space: nowrap;
+}
+.row2 {
+  display: flex;
+  align-items: center;
+  gap: 22px;
+  margin-top: 12px;
+  font-size: 13px;
+}
+.dep {
+  border: 1px solid #fff;
+  font-weight: 700;
+  padding: 7px 14px;
+  border-radius: 4px;
+}
+.cup {
+  background: var(--org);
+  font-weight: 700;
+  padding: 7px 14px;
+  border-radius: 4px;
+}
+.links {
+  display: flex;
+  gap: 22px;
+  overflow-x: auto;
+  scrollbar-width: none;
+  white-space: nowrap;
+}
+
+/* ============================================================
+   3. BANNERS (carrossel)
+   ============================================================ */
+
+/* Faixa azul que fica atrás dos banners. */
+.hero {
+  background: var(--blue);
+  padding: 16px 0 0;
+  position: relative;
+}
+
+/* "Carrossel": linha de banners que rola para o lado e "encaixa" em cada banner (scroll-snap).
+   O padding de baixo (80px) cria o espaço entre os banners e os cartões. */
+.car {
+  display: flex;
+  gap: 16px;
+  overflow-x: auto;
+  scroll-snap-type: x mandatory;
+  scrollbar-width: none;
+  padding: 0 16px 80px;
+  scroll-behavior: smooth;
+}
+
+/* Esconde a barra de rolagem do carrossel no Chrome/Safari. */
+.car::-webkit-scrollbar {
+  display: none;
+}
+
+/* Cada banner: quase metade da largura da tela, 394px de altura, cantos arredondados. */
+.slide {
+  flex: 0 0 min(48.5%, 100% - 32px);
+  height: 394px;
+  border-radius: 16px;
+  scroll-snap-align: start;
+  overflow: hidden;
+  background: var(--ph);
+}
+
+/* Setas ‹ › do carrossel: botões redondos brancos... */
+.arr {
+  position: absolute;
+  top: 190px;
+  width: 34px;
+  height: 34px;
+  border-radius: 50%;
+  background: #fff;
+  border: 0;
+  box-shadow: 0 2px 6px #0003;
+  cursor: pointer;
+  color: var(--org);
+  font-size: 18px;
+  font-weight: 800;
+  z-index: 3;
+}
+
+/* ...a da esquerda... */
+.arr.l {
+  left: 10px;
+}
+
+/* ...e a da direita. */
+.arr.r {
+  right: 10px;
+}
+
+/* ============================================================
+   4. CARTÕES DE ATALHO (Visto recentemente, Placas-mãe...)
+   ============================================================ */
+
+/* Linha com 5 cartões. margin-top negativo faz a faixa azul do banner aparecer atrás deles. */
+.cards {
+  display: grid;
+  grid-template-columns: repeat(5, 1fr);
+  gap: 16px;
+  padding: 0 16px;
+  margin-top: -52px;
+  position: relative;
+  z-index: 2;
+}
+
+/* "Card": cada cartão branco. */
+.cd {
+  background: #fff;
+  border-radius: 8px;
+  padding: 16px 20px 20px;
+  min-height: 241px;
+}
+
+/* Título do cartão (a seta › fica à direita). */
+.cd h3 {
+  margin: 0 0 14px;
+  font-size: 14px;
+  font-weight: 700;
+  display: flex;
+  justify-content: space-between;
+}
+.cd h3 a {
+  color: var(--org);
+}
+
+/* Grade 2×2 com 4 imagenzinhas. */
+.g4 {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 10px;
+}
+
+/* Espaço de imagem (cinza até colocar uma foto). */
+.img {
+  background: var(--ph);
+  border-radius: 6px;
+  overflow: hidden;
+}
+.g4 .img {
+  height: 68px;
+}
+
+/* "Recomendado": linha com imagem à esquerda e nome/preço à direita. */
+.rec {
+  display: grid;
+  grid-template-columns: 60px 1fr;
+  gap: 12px;
+  align-items: center;
+  margin-bottom: 12px;
+}
+.rec .img {
+  height: 60px;
+}
+.rec small {
+  display: block;
+  font-size: 13px;
+}
+.rec b {
+  font-size: 13px;
+}
+
+/* "Recently viewed": cartão "Visto recentemente" com 1 imagem central e legenda. */
+.rv .img {
+  width: 110px;
+  height: 110px;
+  margin: 4px auto 12px;
+}
+.rv p {
+  margin: 0;
+  font-size: 13px;
+}
+
+/* ============================================================
+   5. CATEGORIAS (bolinhas)
+   ============================================================ */
+
+/* Faixa de categorias que rola para o lado. */
+.cats {
+  display: flex;
+  gap: 40px;
+  overflow-x: auto;
+  scrollbar-width: none;
+  padding: 36px 40px 44px;
+}
+
+/* Cada categoria: bolinha + nome embaixo. */
+.cat {
+  flex: 0 0 112px;
+  text-align: center;
+  font-weight: 600;
+  font-size: 15px;
+  color: #4a5a78;
+}
+
+/* A bolinha (círculo de 80px). */
+.cat .img {
+  width: 80px;
+  height: 80px;
+  border-radius: 50%;
+  margin: 0 auto 14px;
+}
+
+/* Categoria "Cupons": bolinha laranja. */
+.cat.o .img {
+  background: var(--org);
+}
+
+/* Ao passar o mouse, o nome fica laranja. */
+.cat:hover {
+  color: var(--org);
+}
+
+/* ============================================================
+   6. RODAPÉ
+   ============================================================ */
+
+/* Faixa azul escura no fim da página. */
+footer {
+  background: var(--blue2);
+  color: #b8c8e8;
+  text-align: center;
+  padding: 22px;
+  font-size: 12px;
+}
+
+/* ============================================================
+   7. TELAS PEQUENAS
+   ============================================================ */
+
+/* Até 1100px: os cartões ficam com 260px cada e a linha rola para o lado. */
+@media (max-width: 1100px) {
+  .cards {
+    grid-template-columns: repeat(5, 260px);
+    overflow-x: auto;
+  }
+}
+
+/* Até 700px (celular): cabeçalho mais compacto, busca em linha própria, banners menores e sem setas. */
+@media (max-width: 700px) {
+  header {
+    padding: 12px;
+  }
+  .top {
+    flex-wrap: wrap;
+    gap: 10px;
+  }
+  .search {
+    order: 3;
+    flex-basis: 100%;
+  }
+  .acts {
+    gap: 14px;
+  }
+  .slide {
+    flex-basis: calc(100% - 32px);
+    height: 300px;
+  }
+  .arr {
+    display: none;
+  }
+  .cats {
+    gap: 20px;
+    padding: 24px 16px;
+  }
+}
+@media (prefers-reduced-motion: reduce) {
+
+  /* Se a pessoa pediu "menos animações", a rolagem do carrossel é instantânea. */
+  .car {
+    scroll-behavior: auto;
+  }
+}
