@@ -1,29 +1,20 @@
-/* ============================================================
-   VOTIX — index.css
-   Estilos da PÁGINA INICIAL. Este arquivo é independente:
-   não usa base.css.
-   ============================================================ */
 
-/* ============================================================
-   1. VARIÁVEIS E CONFIGURAÇÃO GERAL
-   ============================================================ */
 
-/* Cores do site (a página inicial tem seu próprio conjunto, menor que o das outras páginas). */
+/* Cores do site*/
 :root {
-  --blue: #404142;  /* azul principal (cabeçalho, links, botões azuis) */
-  --blue2: #454546;  /* azul mais escuro (rodapé) */
-  --org: #fd564a;  /* laranja da marca (botões, destaques, preços em oferta) */
-  --bg: #f0f2f5;  /* cinza claro do fundo da página */
-  --tx: #2b3442;  /* cor padrão dos textos */
-  --ph: #e4e8ee;  /* cinza dos espaços de imagem (placeholder) */
+  --blue: #404142;  /* (cabeçalho, links, botões azuis)*/
+  --blue2: #454546;  /* (rodapé) */
+  --org: #fd564a;  /*  (botões, destaques, preços em oferta) */
+  --bg: #f0f2f5;  /*(fundo da página) */
+  --tx: #2b3442;  /* cor dos textos */
+  --ph: #e4e8ee;  /* (placeholder) */
 }
 
-/* width/height já contam borda e espaçamento interno. */
 * {
   box-sizing: border-box;
 }
 
-/* Página inteira: sem margem, fundo cinza claro, fonte Montserrat. */
+/* Página inteira*/
 body {
   margin: 0;
   background: var(--bg);
@@ -32,7 +23,7 @@ body {
   padding-bottom: env(safe-area-inset-bottom, 0px);
 }
 
-/* Links sem sublinhado, com a cor do texto em volta. */
+/* Link sem  efeito, com a cor do texto em volta. */
 a {
   color: inherit;
   text-decoration: none;
@@ -41,13 +32,13 @@ input {
   font: inherit;
 }
 
-/* Contorno laranja ao navegar pelo teclado (Tab). */
+/* Contorno na rolagem. */
 :focus-visible {
   outline: 2px solid var(--org);
   outline-offset: 2px;
 }
 
-/* Imagens: sem espaço extra embaixo e preenchendo a caixa onde estiverem (object-fit: cover). */
+/* Imagens*/
 img {
   display: block;
   max-width: 100%;
@@ -56,10 +47,10 @@ img {
 }
 
 /* ============================================================
-   2. CABEÇALHO
+   2. Header
    ============================================================ */
 
-/* Barra azul do topo (mesmo visual de base.css; o conteúdo é criado por assets/js/core.js). */
+/* começo do header */
 header {
   background: var(--blue);
   color: #fff;
