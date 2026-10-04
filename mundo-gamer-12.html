@@ -1,0 +1,206 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+  <title>Controle Sem Fio Microsoft, Edição Especial — VOTIX</title>
+
+  <!-- Fonte Montserrat (Google Fonts) -->
+  <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+
+  <!-- Estilos: base.css = visual comum do site | produto.css = só desta página -->
+  <link rel="stylesheet" href="../../assets/css/base.css">
+  <link rel="stylesheet" href="../../assets/css/produto.css">
+</head>
+
+<!-- data-base="../../" avisa o JavaScript que esta página está 2 pastas abaixo da raiz
+     (produtos/mundo-gamer/), para ele achar index.html, carrinho.html etc. -->
+<body data-base="../../">
+
+  <!-- O cabeçalho (logo, busca e menu) é inserido aqui pelo assets/js/core.js -->
+  <div id="topo"></div>
+
+  <!-- Caixa central de toda a página do produto -->
+  <div class="pw">
+
+    <!-- Trilha de navegação: Início / Categoria / Código do produto -->
+    <nav class="bc2" aria-label="Você está em"><a href="../../index.html">Início</a> / <a href="../../mundo-gamer.html">Mundo Gamer</a> / Controle Sem Fio / <b>Código 210212</b></nav>
+
+    <!-- LAYOUT EM 2 COLUNAS: à esquerda fotos e informações; à direita a caixa de compra -->
+    <div class="pp">
+      <div>
+
+        <!-- ===== COLUNA ESQUERDA: fotos e informações do produto ===== -->
+        <section class="pl">
+
+          <!-- Miniatura da foto (espaço reservado: para usar uma foto, coloque uma <img> aqui) -->
+          <div class="th"></div>
+
+          <!-- Foto grande do produto (espaço reservado) -->
+          <div class="big" role="img" aria-label="Imagem do produto"></div>
+
+          <!-- Ícones do canto superior: compartilhar (#shr) e favoritar (#fav) — o produto.js faz funcionar -->
+          <div class="ic">
+            <button id="shr" aria-label="Compartilhar"><svg viewBox="0 0 24 24"><circle cx="18" cy="5" r="3"/><circle cx="6" cy="12" r="3"/><circle cx="18" cy="19" r="3"/><path d="M8.600 13.500l6.800 4M15.400 6.500l-6.800 4"/></svg></button>
+            <button id="fav" aria-label="Favoritar" aria-pressed="false"><svg viewBox="0 0 24 24"><path d="M12 21s-7.500-4.600-9.500-9.200C1 8 3.200 4.500 6.700 4.500c2 0 3.600 1.100 5.300 3 1.700-1.900 3.300-3 5.300-3 3.500 0 5.700 3.500 4.200 7.300C19.500 16.400 12 21 12 21z"/></svg></button>
+          </div>
+
+          <!-- Textos: nome, vendedor e detalhes do produto -->
+          <div class="info">
+            <h1>Controle Sem Fio Microsoft, Edição Especial</h1>
+
+            <!-- Nome do vendedor (o link leva à caixa do vendedor, mais abaixo) -->
+            <div class="sell">Vendido e entregue por: <a href="#vend">Mega Eletro</a></div>
+
+            <!-- Destaques do produto (lista) + botões que abrem a descrição e a ficha técnica -->
+            <div class="sob">
+              <h2>SOBRE O PRODUTO</h2>
+              <ul>
+                <li><b>Marca Microsoft:</b> fabricante reconhecida, com garantia de 12 meses.</li>
+                <li><b>Versão Edição Especial:</b> configuração pensada para quem busca bom custo-benefício.</li>
+                <li><b>Pronto para usar:</b> acompanha manual e nota fiscal, com envio para todo o Brasil.</li>
+              </ul>
+              <button class="lk2" data-pn="d">Ver descrição</button><button class="lk2" data-pn="t">Ver informações técnicas</button>
+
+              <!-- Painel DESCRIÇÃO: começa escondido, abre ao clicar em "Ver descrição" -->
+              <div class="pn" id="d">Controle Sem Fio Microsoft, Edição Especial. Texto de descrição de demonstração: substitua por uma descrição completa do produto, com diferenciais, itens inclusos e recomendações de uso.</div>
+
+              <!-- Painel FICHA TÉCNICA: começa escondido, abre ao clicar em "Ver informações técnicas" -->
+              <div class="pn" id="t">
+                <table>
+                  <tr><td>Marca</td><td>Microsoft</td></tr>
+                  <tr><td>Modelo</td><td>Controle Sem Fio</td></tr>
+                  <tr><td>Versão</td><td>Edição Especial</td></tr>
+                  <tr><td>Categoria</td><td>Mundo Gamer</td></tr>
+                  <tr><td>Garantia</td><td>12 meses</td></tr>
+                  <tr><td>Código</td><td>210212</td></tr>
+                </table>
+              </div>
+            </div>
+          </div>
+        </section>
+
+        <!-- Espaço para um banner de propaganda -->
+        <div class="bn" aria-hidden="true"><!-- espaço para banner --></div>
+
+        <!-- PRODUTOS RELACIONADOS: cada <a class="pc"> é um cartão (nome, preço antigo, preço e parcelas) -->
+        <section class="rel">
+          <h2>Você também pode gostar</h2>
+          <div class="grid">
+            <a class="pc" href="mundo-gamer-13.html">
+              <div class="ph"></div>
+              <h3>Controle Sem Fio Logitech, Edição Padrão</h3>
+              <div class="pr">R$ 1.124,90</div>
+              <small>No PIX ou 10x de R$ 112,49</small>
+            </a>
+            <a class="pc" href="mundo-gamer-14.html">
+              <div class="ph"></div>
+              <h3>Controle Sem Fio Logitech, Edição Especial</h3>
+              <div class="pr">R$ 1.236,90</div>
+              <small>No PIX ou 10x de R$ 123,69</small>
+            </a>
+            <a class="pc" href="mundo-gamer-15.html">
+              <div class="ph"></div>
+              <h3>Controle Sem Fio Thunderx3, Edição Padrão</h3>
+              <div class="pr">R$ 3.569,90</div>
+              <small>No PIX ou 10x de R$ 356,99</small>
+            </a>
+            <a class="pc" href="mundo-gamer-16.html">
+              <div class="ph"></div>
+              <h3>Controle Sem Fio Thunderx3, Edição Especial</h3>
+              <div class="old">R$ 3.612,00</div>
+              <div class="pr">R$ 3.037,90</div>
+              <small>No PIX ou 10x de R$ 303,79</small>
+            </a>
+            <a class="pc" href="mundo-gamer-17.html">
+              <div class="ph"></div>
+              <h3>Cadeira Gamer Sony, Edição Padrão</h3>
+              <div class="old">R$ 3.265,00</div>
+              <div class="pr">R$ 2.573,90</div>
+              <small>No PIX ou 10x de R$ 257,39</small>
+            </a>
+          </div>
+        </section>
+      </div>
+
+      <!-- ===== COLUNA DIREITA: compra e vendedor ===== -->
+      <aside>
+
+        <!-- CAIXA DE COMPRA: preços, parcelamento, CEP e botões -->
+        <div class="buy">
+          <div class="old">R$ 3.931,00</div>
+          <div class="p">R$ 3.215,90<small>à vista no PIX</small></div>
+
+          <!-- Parcelamento em 10x sem juros -->
+          <div class="par"><b>10x R$ 321,59</b> s/ juros</div>
+          <button class="lk2" id="vpar">Ver detalhes do parcelamento</button>
+
+          <!-- Lista de parcelas: preenchida pelo produto.js ao clicar em "Ver detalhes do parcelamento" -->
+          <div id="par" hidden style="font-size:13px;margin-top:8px;line-height:1.7"></div>
+
+          <!-- Linha "Onde deseja receber seu pedido?" + botão para inserir o CEP -->
+          <div class="cep">
+            <span>Onde deseja receber seu pedido?</span>
+            <button class="lk2" id="icep" style="margin:0">Inserir CEP</button>
+          </div>
+
+          <!-- Campo de CEP: aparece ao clicar em "Inserir CEP" -->
+          <div class="cf" id="cf">
+            <input id="cin" inputmode="numeric" placeholder="00000-000" aria-label="CEP">
+            <button id="cok">Calcular</button>
+          </div>
+
+          <!-- Resultado do cálculo de frete (texto preenchido pelo produto.js) -->
+          <div id="fr" role="status"></div>
+
+          <!-- Botão "Comprar agora": adiciona ao carrinho e abre o carrinho -->
+          <button class="bb b1" id="buy">Comprar agora</button>
+
+          <!-- Botão "Adicionar ao carrinho": adiciona e mostra o aviso verde -->
+          <button class="bb b2" id="add"><svg viewBox="0 0 24 24"><path d="M2 3h3l2.400 11h11l2-8H6"/><circle cx="9" cy="19" r="1.500"/><circle cx="17" cy="19" r="1.500"/></svg>Adicionar ao carrinho</button>
+        </div>
+
+        <!-- CARTÃO DO VENDEDOR: nome, nota, medidor de reputação e estatísticas -->
+        <div class="vd" id="vend">
+          <h3>Mega Eletro<span class="nt">4.8/5</span></h3>
+
+          <!-- Medidor de reputação: barra verde com 5 bolinhas -->
+          <div class="dots">
+            <i></i>
+            <i></i>
+            <i></i>
+            <i></i>
+            <i></i>
+          </div>
+
+          <!-- Legenda do medidor (Ruim ... Ótimo) -->
+          <div class="sc">
+            <span>Ruim</span>
+            <span>Ótimo</span>
+          </div>
+
+          <!-- Estatísticas do vendedor: entrega, atendimento e produtos vendidos -->
+          <div class="st3">
+            <div><b>Entrega</b>No prazo</div>
+            <div><b>Atendimento</b>Responde rapidamente</div>
+            <div><b>304</b>Produtos vendidos</div>
+          </div>
+        </div>
+      </aside>
+    </div>
+  </div>
+
+  <!-- Rodapé -->
+  <footer>VOTIX — loja de demonstração.</footer>
+
+  <!-- ===== SCRIPTS (a ordem importa) ===== -->
+  <!-- 1º: núcleo do site (carrinho + cabeçalho) -->
+  <script src="../../assets/js/core.js"></script>
+
+  <!-- 2º: dados DESTE produto — id (código), n (nome) e p (preço). É a única parte que muda de produto para produto -->
+  <script>const P = {"id": "mundo-gamer-12", "n": "Controle Sem Fio Microsoft, Edição Especial", "p": 3215.9};</script>
+
+  <!-- 3º: faz os botões desta página funcionarem -->
+  <script src="../../assets/js/produto.js"></script>
+</body>
+</html>
